@@ -11,14 +11,16 @@ PUT YOUR COMBOS in combo.txt file and Run python file. :)
 [+] Send Hits to Telegram [+]
 
 > Get Bot Token from https://t.me/BotFather.
-The token will be in the format: 
-5822652687:AAG8OOKPq5I5jI1NUsb5MqwotT3FUNFCNQk
+
+The token will be in the format: 5822652687:AAG8OOKPq5I5jI1NUsb5MqwotT3FUNFCNQk
 
 > To get Chat ID, add any group manager bot in group.
+
 Recommended : https://t.me/MissRose_bot
+
 Type '/id' in group after adding MissRose_bot.
-The Chat ID will be in the format:
--1001637483757
+
+The Chat ID will be in the format: -1001637483757
 
 [+] Hits will be saved in the Results folder.
 GOOD    - Valid accounts with Active Subscription.
