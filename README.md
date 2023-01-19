@@ -22,6 +22,7 @@ Type '/id' in group after adding MissRose_bot.
 The Chat ID will be in the format: -1001637483757
 
 
+
 [+] Hits will be saved in the Results folder.
 
 GOOD    - Valid accounts with Active Subscription.
